@@ -5,6 +5,7 @@
         GeneralError = 0,
         NotFound = 10,
         InternalServerError = 20,
-        InvalidToken = 30
+        InvalidToken = 30,
+        Conflict = 40,
     }
 }

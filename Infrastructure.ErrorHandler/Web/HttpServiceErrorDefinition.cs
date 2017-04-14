@@ -43,5 +43,15 @@ namespace Cmas.Infrastructure.ErrorHandler.Web
                 Details = "Invalid API Token."
             }
         };
+
+        public static HttpServiceError ConflictError = new HttpServiceError
+        {
+            HttpStatusCode = HttpStatusCode.Conflict,
+            ServiceErrorModel = new ServiceErrorModel
+            {
+                Code = ServiceErrorCode.Conflict,
+                Details = "The request could not be completed due to a conflict with the current state of the resource"
+            }
+        };
     }
 }
