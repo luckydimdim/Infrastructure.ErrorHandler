@@ -1,4 +1,6 @@
-﻿using Nancy;
+﻿using System.Collections.Generic;
+using Nancy;
+using Nancy.Validation;
 
 namespace Cmas.Infrastructure.ErrorHandler.Web
 {
@@ -53,5 +55,19 @@ namespace Cmas.Infrastructure.ErrorHandler.Web
                 Details = "The request could not be completed due to a conflict with the current state of the resource"
             }
         };
+
+        public static HttpServiceError ValidationError(IEnumerable<dynamic> errors)
+        {
+            return new HttpServiceError
+                {
+                    HttpStatusCode = HttpStatusCode.BadRequest,
+                    ServiceErrorModel = new ValidationErrorModel
+                    {
+                        Code = ServiceErrorCode.ValidationError,
+                        Details = "Invalid request",
+                        Errors = errors
+                    }
+                };
+        }
     }
 }

@@ -7,5 +7,6 @@
         InternalServerError = 20,
         InvalidToken = 30,
         Conflict = 40,
+        ValidationError = 50,
     }
 }
