@@ -8,5 +8,8 @@
         InvalidToken = 30,
         Conflict = 40,
         ValidationError = 50,
+        Unauthorized = 60,
+        AuthorizationError = 70,
+        ForbiddenError = 80,
     }
 }

@@ -69,5 +69,35 @@ namespace Cmas.Infrastructure.ErrorHandler.Web
                     }
                 };
         }
+
+        public static HttpServiceError UnauthorizedError = new HttpServiceError
+        {
+            HttpStatusCode = HttpStatusCode.Unauthorized,
+            ServiceErrorModel = new ServiceErrorModel
+            {
+                Code = ServiceErrorCode.Unauthorized,
+                Details = "Unauthorized"
+            }
+        };
+
+        public static HttpServiceError AuthorizationError = new HttpServiceError
+        {
+            HttpStatusCode = HttpStatusCode.BadRequest,
+            ServiceErrorModel = new ServiceErrorModel
+            {
+                Code = ServiceErrorCode.AuthorizationError,
+                Details = "Invalid login or password"
+            }
+        };
+
+        public static HttpServiceError ForbiddenError = new HttpServiceError
+        {
+            HttpStatusCode = HttpStatusCode.Forbidden,
+            ServiceErrorModel = new ServiceErrorModel
+            {
+                Code = ServiceErrorCode.ForbiddenError,
+                Details = "Forbidden"
+            }
+        };
     }
 }
