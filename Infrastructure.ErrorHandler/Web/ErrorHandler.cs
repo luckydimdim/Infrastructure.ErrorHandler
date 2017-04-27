@@ -54,7 +54,9 @@ namespace Cmas.Infrastructure.ErrorHandler.Web
                 .WithStatusCode(httpServiceError.HttpStatusCode)
                 .WithModel(httpServiceError.ServiceErrorModel);
 
-            return responseNegotiator.NegotiateResponse(negotiator, context);
+            context.Response =  responseNegotiator.NegotiateResponse(negotiator, context);
+
+            return null;
         }
     }
 }
