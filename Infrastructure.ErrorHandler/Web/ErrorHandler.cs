@@ -35,7 +35,7 @@ namespace Cmas.Infrastructure.ErrorHandler.Web
 
         private void LogException(NancyContext context, Exception exception)
         {
-            if (_logger.IsEnabled(LogLevel.Error) && !(exception is IHasHttpServiceError))
+            if (!(exception is IHasHttpServiceError))
                 _logger.LogError("An exception occured during processing a request. (Exception={0}).", exception);
         }
 
